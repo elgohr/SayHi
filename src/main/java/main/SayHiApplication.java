@@ -13,7 +13,7 @@ public class SayHiApplication {
         SpringApplication.run(SayHiApplication.class, args);
     }
 
-    @RequestMapping(path = "/")
+    @RequestMapping(value={"/", "flyway", "liquibase", "shutdown", "jolokia", "logfile"})
     public String sayHi() {
         return "hi";
     }

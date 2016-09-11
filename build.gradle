@@ -24,11 +24,6 @@ repositories {
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.1'
     compile 'org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE'
-    compile 'org.springframework:spring-webmvc:4.3.2.RELEASE'
-    compile 'org.flywaydb:flyway-core:4.0.3'
-    compile 'org.liquibase:liquibase-core:3.5.1'
-    compile 'org.springframework.boot:spring-boot-starter-hateoas:1.4.0.RELEASE'
-    compile 'org.springframework.boot:spring-boot-starter-actuator:1.4.0.RELEASE'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE'
     testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4-rc-2'

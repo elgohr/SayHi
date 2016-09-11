@@ -53,11 +53,17 @@ class SayHiTest extends Specification {
         "configprops" || HttpMethod.GET
         "dump"        || HttpMethod.GET
         "env"         || HttpMethod.GET
+        "flyway"      || HttpMethod.GET
         "health"      || HttpMethod.GET
         "info"        || HttpMethod.GET
+        "liquibase"   || HttpMethod.GET
         "metrics"     || HttpMethod.GET
         "mappings"    || HttpMethod.GET
+        "shutdown"    || HttpMethod.GET
         "trace"       || HttpMethod.GET
+        "docs"        || HttpMethod.GET
         "heapdump"    || HttpMethod.GET
+        "jolokia"     || HttpMethod.GET
+        "logfile"     || HttpMethod.GET
     }
 }
