@@ -2,14 +2,13 @@ import main.SayHiApplication
 import org.springframework.boot.context.embedded.LocalServerPort
 import org.springframework.boot.test.IntegrationTest
 import org.springframework.boot.test.SpringApplicationContextLoader
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.HttpMethod
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.web.WebAppConfiguration
 import org.springframework.web.client.RestTemplate
 import spock.lang.Specification
 
-@ContextConfiguration(loader = SpringApplicationContextLoader, classes = SayHiApplication)
+@ContextConfiguration(loader = SpringApplicationContextLoader.class, classes = SayHiApplication.class)
 @WebAppConfiguration
 @IntegrationTest
 class SayHiTest extends Specification {
@@ -17,19 +16,7 @@ class SayHiTest extends Specification {
     @LocalServerPort
     int port
 
-    def "should say hi on / call"() {
-        given:
-        def restTemplate = new RestTemplate()
-
-        when:
-        def response = restTemplate.exchange("http://localhost:$port/", HttpMethod.GET, null, String.class)
-
-        then:
-        response.getStatusCode().is2xxSuccessful()
-        response.getBody() == 'hi'
-    }
-
-    def "should have the Spring Boot Actuator Endpoints available"() {
+    def "should have the Spring Boot Actuator Endpoints available and a test method"() {
         given:
         def restTemplate = new RestTemplate()
         def url = "http://localhost:$port/$endpoint"
@@ -47,6 +34,7 @@ class SayHiTest extends Specification {
 
         where:
         endpoint      || method
+        "test"        || HttpMethod.GET
         "actuator"    || HttpMethod.GET
         "autoconfig"  || HttpMethod.GET
         "beans"       || HttpMethod.GET
