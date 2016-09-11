@@ -1,0 +1,36 @@
+group 'com.elgohr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.1'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.3.2.RELEASE'
+    compile 'org.flywaydb:flyway-core:4.0.3'
+    compile 'org.liquibase:liquibase-core:3.5.1'
+    compile 'org.springframework.boot:spring-boot-starter-hateoas:1.4.0.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-actuator:1.4.0.RELEASE'
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.4.0.RELEASE'
+    testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4-rc-2'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+}
